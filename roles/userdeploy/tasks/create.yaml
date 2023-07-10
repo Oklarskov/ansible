@@ -1,8 +1,10 @@
 ---
 - name: Create user
+  include_vars: deploy-users.yaml
   user:
     name: '{{ item.username }}'
     groups: '{{ item.groups }}'
     force: yes
     expires: -1
     createhome: yes
+  with_items: '{{ users }}'

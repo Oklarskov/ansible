@@ -1,2 +1,4 @@
 ---
-# tasks file for /home/master/Documents/ansible/roles/userdeploy
+- name: deploy users
+  import_tasks: create.yaml
+  tags: u
