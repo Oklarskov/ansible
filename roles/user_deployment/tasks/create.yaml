@@ -1,0 +1,8 @@
+- name: Create user
+  user:
+    name: '{{ item.username }}'
+    groups: '{{ item.groups }}'
+    force: yes
+    expires: -1
+    createhome: yes
+

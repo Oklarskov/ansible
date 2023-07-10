@@ -1,0 +1,5 @@
+- name: deployment
+  gather_facts: true
+  hosts: all
+  roles:
+    - user_deployment
