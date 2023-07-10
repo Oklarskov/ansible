@@ -10,4 +10,4 @@
       shell: 'bin/bash'
       comment: 'test'
       password: 'test'
-      
+    with_items: '{{users}}'      
