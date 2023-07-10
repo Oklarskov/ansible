@@ -1,13 +1,20 @@
 ---
+- name: group
+  become: true
+  group:
+    name: allowssh
+    state: present
+
 - name: test
-    user:
-      name: '{{ item.username }}'
-      groups: '{{ item.groups }}'
-      force: yes
-      expires: -1
-      state: '{{ item.state }}'
-      createhome: yes
-      shell: 'bin/bash'
-      comment: 'test'
-      password: 'test'
-    with_items: '{{users}}'      
+  become: true
+  user:
+    name: '{{ item.username }}'
+    groups: '{{ item.groups }}'
+    force: yes
+    expires: -1
+    state: '{{ item.state }}'
+    createhome: yes
+    shell: '/bin/bash'
+    comment: 'test'
+    password: 'test'     
+  with_items: '{{users}}'

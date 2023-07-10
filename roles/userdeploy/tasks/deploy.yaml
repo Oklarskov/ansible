@@ -3,4 +3,4 @@
   include_vars: deploy-users.yaml
 
 - name: deploy
-  import_tasks: create_user.yaml
+  import_tasks: 'roles/userdeploy/create_user.yaml'

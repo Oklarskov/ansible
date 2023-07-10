@@ -1,4 +1,8 @@
 ---
+- name: include
+  include_vars: deploy-users.yaml
+  tags: u
+
 - name: deploy users
   import_tasks: create.yaml
   tags: u

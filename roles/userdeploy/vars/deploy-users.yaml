@@ -1,9 +1,8 @@
 ---
+
 users:
   - fullname: Oliver Klarskov
     username: olikla
     use_sudo: yes
-    state: present
-    expires: -1
     groups: allowssh
-    
+    state: present
