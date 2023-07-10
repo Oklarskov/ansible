@@ -1,2 +1,8 @@
 ---
-# tasks file for /home/master/Documents/ansible/roles/patch
+- name: update check
+  import_tasks: update_check.yaml
+  tags: check
+
+- name: upgrade
+  import_tasks: upgrade.yaml
+  tags: upgrade
