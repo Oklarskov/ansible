@@ -1,6 +1,14 @@
 ---
-- name: upgrade
+- name: upgrade debian
   apt:
     upgrade: yes
     update_cache: yes
     cache_valid_time: 86400
+  when: ansible_facts['distribution'] == "Debian"
+
+- name: upgrade redhat
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: ansible_facts['distribution'] == "RedHat"

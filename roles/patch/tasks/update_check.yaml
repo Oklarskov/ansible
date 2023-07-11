@@ -1,6 +1,13 @@
 ---
-- name: check for updates
+- name: check for updates debian
   apt:
     upgrade: no
     update_cache: yes
     cache_valid_time: 86400
+  when: ansible_facts['distribution'] == 'Debian'
+
+- name: check for updates redhat
+  yum:
+    list: updates
+    update_cache: True
+  when: ansible_facts['distribution'] == 'RedHat'
