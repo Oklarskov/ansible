@@ -1,0 +1,29 @@
+---
+- name: Deploy MariaDB server
+  docker_container:
+    image: mariadb
+    name: mariadb
+    volumes:
+      - "mariadb:/var/lib/mysql"
+    env:
+      MYSQL_ROOT_PASSWORD: somerootpassword
+      MYSQL_PASSWORD: somemysqlpassword
+      MYSQL_DATABASE: db
+      MYSQL_USER: mysqluser
+
+- name: Deploy passbolt
+  docker_container:
+    image: passbolt
+    name: passbolt
+    restart_policy: always
+    ports:
+      - "8080:80"
+    links:
+      - "mariadb:/var/lib/mysql"
+    volumes:
+      - "passbolt:/var/www/html"
+    env:
+      MYSQL_PASSWORD: somemysqlpassword
+      MYSQL_DATABASE: db
+      MYSQL_USER: mysqluser
+      MYSQL_HOST: mariadb

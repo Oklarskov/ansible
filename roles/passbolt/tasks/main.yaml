@@ -1,0 +1,3 @@
+---
+- name: install apt
+  import_tasks: apt.yaml
