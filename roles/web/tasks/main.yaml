@@ -4,5 +4,5 @@
   import_tasks: apt.yaml
 
 - name: install wordpress
-  import_tasks: install-wordpress.yalm
+  import_tasks: install-wordpress.yaml
   
