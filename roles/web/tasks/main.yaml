@@ -1,0 +1,8 @@
+---
+- name: install apt
+  when: ansible_facts['distribution'] == "Debian"
+  import_tasks: apt.yaml
+
+- name: install wordpress
+  import_tasks: install-wordpress.yalm
+  
