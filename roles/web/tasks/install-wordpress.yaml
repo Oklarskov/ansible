@@ -3,6 +3,7 @@
   docker_container:
     image: mariadb
     name: mariadb
+    restart_policy: always
     volumes:
       - "mariadb:/var/lib/mysql"
     env:
