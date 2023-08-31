@@ -1,0 +1,6 @@
+---
+- name: passbolt
+  gather_facts: true
+  hosts: all
+  roles:
+    - passbolt

@@ -3,6 +3,7 @@
   docker_container:
     image: mariadb
     name: mariadb
+    restart_policy: always   
     volumes:
       - "mariadb:/var/lib/mysql"
     env:
@@ -13,7 +14,7 @@
 
 - name: Deploy passbolt
   docker_container:
-    image: passbolt
+    image: passbolt/passbolt
     name: passbolt
     restart_policy: always
     ports:
